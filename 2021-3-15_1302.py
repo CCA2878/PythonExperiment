@@ -7,7 +7,7 @@ turtle1.speed(2)
 i = 40
 while i >= 1:
     turtle1.pensize(i)
-    turtle1.pencolor((randint(0,255),randint(0,255),randint(0,255)))
+    turtle1.color(randint(0,255),randint(0,255),randint(0,255))
     turtle1.fd(100)
     turtle1.lt(90)
     i += -2
