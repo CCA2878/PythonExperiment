@@ -1,0 +1,6 @@
+num = input()
+if float(num) >= 90:print(f'{num}分的等级为“优”。')
+elif 80 <= float(num) < 90:print(f'{num}分的等级为“良”。')
+elif 70 <= float(num) < 80:print(f'{num}分的等级为“中”。')
+elif 60 <= float(num) < 70:print(f'{num}分的等级为“及格”。')
+else:print(f'{num}分的等级为“不及格”。')
