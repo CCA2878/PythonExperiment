@@ -1,5 +1,5 @@
-for i in range(1, 10):
-    for j in range(i, 10):
-        print('{}*{}={:2}'.format(j, i, i * j), end = '  ')
-    if i != 9:
-        print('\n' + ('        ' * i), end="")
+for i in range(1, 5):
+    print(' ' * (5 - i) + '*' * (2 * i - 1))
+print('*********')
+for i in range(4, 0, -1):
+    print(' ' * (5 - i) + '*' * (2 * i - 1))
