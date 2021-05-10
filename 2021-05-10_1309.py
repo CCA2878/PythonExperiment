@@ -1,10 +1,8 @@
-def runnian(year):
-    if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
-        return True
-    else:
+def Prime(num):
+    if num == 1:
         return False
-y=int(input())
-if runnian(y) == True:
-    print("%d年是闰年"%y)
-else:
-    print("%d年不是闰年"%y)
+    for i in range(2, num):
+        if num % i == 0:
+            return False
+    return True
+print(Prime(int(input())))
