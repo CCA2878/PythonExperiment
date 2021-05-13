@@ -1,22 +1,21 @@
-class fbncSum:
-    s = 1
-    __k1 = 1
-    __k2 = 1
-    __k = 0
+class factSum:
+    s = 0
 
     def sum(t):
-        fbncSum.s += t
+        factSum.s += t
 
-    def list(n):
-        if n == 2:
-            fbncSum.sum(fbncSum.__k2)
+    def fact(n):
+        __t = 1
+        for __i in range(1, n + 1):
+            __t = __t * __i
+        return __t
+
+    def calc(n):
+        if n == 1:
+            factSum.sum(1)
         else:
-            fbncSum.list(n - 1)
-            fbncSum.sum(fbncSum.__k1 + fbncSum.__k2)
-            fbncSum.__k = fbncSum.__k1 + fbncSum.__k2
-            fbncSum.__k1 = fbncSum.__k2
-            fbncSum.__k2 = fbncSum.__k
+            factSum.calc(n - 1)
+            factSum.sum(factSum.fact(n))
 
-n = int(input())
-fbncSum.list(n)
-print(f'Fibonacci数列前{n}项和为{fbncSum.s}')
+factSum.calc(int(input()))
+print(factSum.s)
