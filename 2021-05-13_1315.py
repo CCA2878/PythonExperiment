@@ -1,17 +1,21 @@
-class HNT:#汉诺塔递归
-    m = 0
-    
-    def prt(k, N, M):#print，顺便作为递归终点
-        HNT.m += 1
-        print(f'{k}:{N}-->{M}')
+class fbncSum:
+    s = 1
+    __k1 = 1
+    __k2 = 1
+    __k = 0
 
-    def move(n, A, B, C):
-        if n == 1:
-            HNT.prt('1', A, C)
+    def sum(t):
+        fbncSum.s += t
+
+    def list(n):
+        if n == 2:
+            fbncSum.sum(fbncSum.__k2)
         else:
-            HNT.move(n - 1, A, C, B)
-            HNT.prt(n, A, C)
-            HNT.move(n - 1, B, A, C)
+            fbncSum.list(n - 1)
+            fbncSum.sum(fbncSum.__k1 + fbncSum.__k2)
+            fbncSum.__k = fbncSum.__k1 + fbncSum.__k2
+            fbncSum.__k1 = fbncSum.__k2
+            fbncSum.__k2 = fbncSum.__k
 
-HNT.move(int(input()), 'A', 'B', 'C')
-print(f'总共移动了{HNT.m}次。')
+fbncSum.list(int(input()))
+print(fbncSum.s)
