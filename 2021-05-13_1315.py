@@ -17,5 +17,6 @@ class fbncSum:
             fbncSum.__k1 = fbncSum.__k2
             fbncSum.__k2 = fbncSum.__k
 
-fbncSum.list(int(input()))
-print(fbncSum.s)
+n = int(input())
+fbncSum.list(n)
+print(f'Fibonacci数列前{n}项和为{fbncSum.s}')
